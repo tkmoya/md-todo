@@ -1,0 +1,10 @@
+{
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "d1-todo-app",
+      "database_id": "2562430b-6e39-4f8e-93bd-39cf89786019",
+	    "migrations_dir": "src/drizzle/migrations"
+    }
+  ]
+}

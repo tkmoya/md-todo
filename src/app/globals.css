@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.description body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 1rem;
+}
+
+.description .markdown-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* 見出し */
+.description h1, 
+.description h2, 
+.description h3, 
+.description h4, 
+.description h5, 
+.description h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #222;
+}
+
+.description h1 {
+  font-size: 2em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.description h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.description h3 {
+  font-size: 1.25em;
+}
+
+.description h4 {
+  font-size: 1em;
+}
+
+.description h5 {
+  font-size: 0.875em;
+}
+
+.description h6 {
+  font-size: 0.85em;
+  color: var(--secondary-color);
+}
+
+/* 段落とテキスト */
+.description p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.description strong {
+  font-weight: 600;
+}
+
+.description em {
+  font-style: italic;
+}
+
+.description del {
+  text-decoration: line-through;
+}
+
+/* リンク */
+.description a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.description a:hover {
+  color: #2c4b6e;
+  text-decoration: underline;
+}
+
+/* リスト */
+.description ul, 
+.description ol {
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+.description ul {
+  list-style-type: disc;
+}
+
+.description ul ul {
+  list-style-type: circle;
+}
+
+.description ul ul ul {
+  list-style-type: square;
+}
+
+.description ol {
+  list-style-type: decimal;
+}
+
+.description ol ol {
+  list-style-type: lower-alpha;
+}
+
+.description ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.description li {
+  margin-bottom: 0.25em;
+}
+
+/* チェックボックス（TODOアプリ向け） */
+.description ul.task-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.description ul.task-list li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.description .task-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  transition: all 0.2s ease;
+}
+
+.description .task-list-item-checkbox:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.description .task-list-item-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 0.3em;
+  top: 0.15em;
+  width: 0.4em;
+  height: 0.6em;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.description .task-list-item.completed {
+  color: var(--secondary-color);
+  text-decoration: line-through;
+}
+
+/* 引用ブロック */
+.description blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: #666;
+  border-left: 4px solid var(--blockquote-border);
+  background-color: var(--blockquote-bg);
+}
+
+.description blockquote > :first-child {
+  margin-top: 0;
+}
+
+.description blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* コードブロック */
+.description pre {
+  background-color: var(--code-bg);
+  border-radius: 4px;
+  padding: 1em;
+  overflow: auto;
+  margin: 1em 0;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.description code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.description pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+/* テーブル */
+.description table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  overflow-x: auto;
+  display: block;
+}
+
+.description table th, 
+.description table td {
+  border: 1px solid var(--border-color);
+  padding: 0.5em 1em;
+}
+
+.description table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  text-align: left;
+}
+
+.description table tr:nth-child(even) {
+  background-color: #fbfbfb;
+}
+
+/* 水平線 */
+.description hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: var(--border-color);
+  border: 0;
+}
+
+/* 画像 */
+.description img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+  border-radius: 4px;
+}
+
+/* インラインコード */
+.description code {
+  background-color: var(--code-bg);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* 日付、期限（TODOアプリ向け） */
+.description .due-date {
+  color: var(--primary-color);
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+.description .due-date.overdue {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+/* プライオリティマーカー（TODOアプリ向け） */
+.description .priority-high {
+  color: var(--danger-color);
+  font-weight: bold;
+}
+
+.description .priority-medium {
+  color: #f39c12;
+}
+
+.description .priority-low {
+  color: var(--accent-color);
+}
+
+/* メディアクエリ - モバイル対応 */
+@media (max-width: 768px) {
+  .description .markdown-container {
+    padding: 15px;
+  }
+  
+  .description h1 {
+    font-size: 1.8em;
+  }
+  
+  .description h2 {
+    font-size: 1.4em;
+  }
+  
+  .description pre {
+    padding: 0.75em;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #e4e4e4;
+    --border-color: #444;
+    --code-bg: #2d2d2d;
+    --blockquote-bg: #2a2a2a;
+    --blockquote-border: #444;
+  }
+  
+  .description body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .description .markdown-container {
+    background-color: #252525;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .description h1, 
+  .description h2, 
+  .description h3, 
+  .description h4, 
+  .description h5, 
+  .description h6 {
+    color: #e0e0e0;
+  }
+  
+  .description table th {
+    background-color: #333;
+  }
+  
+  .description table tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+  
+  .description a {
+    color: #7aa6da;
+  }
+  
+  .description a:hover {
+    color: #a5c2e6;
+  }
+  
+  .description code {
+    background-color: var(--code-bg);
+  }
+}
