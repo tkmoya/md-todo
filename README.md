@@ -1,6 +1,20 @@
-# Next.js Cloudflare MD Todo
+# MD Todo
 
-このプロジェクトは、Next.js、Hono、Cloudflare を使用して構築されたマークダウン形式で Todo を管理できるアプリケーションです。
+## デモ
+
+https://nextjs-cloudflare-todo.pages.dev/
+
+## 概要
+
+マークダウン形式で Todo を管理できるアプリケーションです。
+
+## 主な機能
+
+- Todo の作成、取得、更新、削除
+- マークダウン形式で Todo の説明を記述可能
+- Cloudflare Workers を使用した高速なバックエンド
+- 優先度設定
+- 期限設定
 
 ## 使用技術
 
@@ -43,11 +57,3 @@
 
 5. **アプリケーションにアクセス**
    ブラウザで `http://localhost:3000` を開きます。
-
-## 主な機能
-
-- Todo の作成、取得、更新、削除
-- マークダウン形式で Todo の説明を記述可能
-- Cloudflare Workers を使用した高速なバックエンド
-- 優先度設定
-- 期限設定
