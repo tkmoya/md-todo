@@ -22,11 +22,6 @@
 
 1. **リポジトリをクローン**
 
-   ```bash
-   git clone https://github.com/your-repo/nextjs-cloudflare-todo.git
-   cd nextjs-cloudflare-todo
-   ```
-
 2. **依存関係をインストール**
 
    ```bash
